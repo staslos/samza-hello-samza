@@ -47,6 +47,16 @@
       <filtered>true</filtered>
     </file>
     <file>
+      <source>${basedir}/src/main/config/magnetic-feed-cdh.properties</source>
+      <outputDirectory>config</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+    <file>
+      <source>${basedir}/src/main/config/magnetic-join-cdh.properties</source>
+      <outputDirectory>config</outputDirectory>
+      <filtered>true</filtered>
+    </file>
+    <file>
       <source>${basedir}/src/main/config/wikipedia-feed.properties</source>
       <outputDirectory>config</outputDirectory>
       <filtered>true</filtered>
