@@ -21,7 +21,7 @@ import scala.util.{Failure, Success, Try}
  * Chooses partition, by hashing auction id.
  */
 class MagneticEventsFeedStreamTask extends StreamTask {
-  val NUM_PARTITIONS = 4  // Equals to the number of partitions in target topic
+  val NUM_PARTITIONS = 30  // TODO Equals to the number of partitions in target topic
   val IMP_OUTPUT_STREAM = new SystemStream("kafka", "imp-meta")
   val BID_OUTPUT_STREAM = new SystemStream("kafka", "bid-meta")
   val IMP_ERROR_STREAM = new SystemStream("kafka", "imp-error")

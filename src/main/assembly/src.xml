@@ -31,6 +31,10 @@
   </fileSets>
   <files>
     <file>
+      <source>${basedir}/bin/feed_kafka_from_s3.sh</source>
+      <outputDirectory>bin</outputDirectory>
+    </file>
+    <file>
       <source>${basedir}/src/main/resources/log4j.xml</source>
       <outputDirectory>lib</outputDirectory>
     </file>
