@@ -137,10 +137,10 @@ deploy/samza/bin/run-job.sh --config-factory=org.apache.samza.config.factories.P
 # http://ds-hnn002.dev.aws.mgnt.cc:8088/cluster/scheduler
 
 # Start Kafka concole producer to read ad logs from s3 and send them to Kafka
-sh deploy/samza/bin/feed_kafka_from_s3.sh s3://com.domdex.log/2016/01/05/00/*_ad.log.gz imp-raw 512k
+sh deploy/samza/bin/feed_kafka_from_s3.sh s3://com.domdex.log/2016/01/06/00/*_ad.log.gz imp-raw 512k
 
 # Start Kafka concole producer to read bid logs from s3 and send them to Kafka (in another terminal)
-sh deploy/samza/bin/feed_kafka_from_s3.sh s3://com.domdex.rtb/2016/01/05/00/*_bids.log.gz bid-raw 4096k
+sh deploy/samza/bin/feed_kafka_from_s3.sh s3://com.domdex.rtb/2016/01/06/00/*_bids.log.gz bid-raw 8192k
 
 # Monitor propagation of data thru system (from local machine)
 sh deploy/kafka/bin/kafka-console-consumer.sh  --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --topic imp-meta
