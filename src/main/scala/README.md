@@ -7,7 +7,8 @@
 i.e. all the necessary information to make a join will end up on the same machine/process.
 - Samza's local state storage (KV store) provides a lookup mechanism to make a join.
 - Increasing amount of partitions/concurrent tasks allows the join to scale linearly (nothing-share architecture).
-- Tested on local Samza grid
+- Tested on local Samza grid and at Scale on Hadoop cluster
+- Please note, media partner impressions just dropped during the join, since there is no related bids
 
 ###TODO
 - Deploy to Hadoop cluster and test at scale
