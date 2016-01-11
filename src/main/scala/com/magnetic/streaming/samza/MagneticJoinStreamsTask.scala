@@ -76,6 +76,8 @@ class MagneticJoinStreamsTask extends StreamTask with InitableTask with Windowab
     while (it.hasNext) {
       val entry = it.next()
       if (entry.getValue.get("log_timestamp").asInstanceOf[Integer] < thresholdTimestamp) {
+        // It's possible to set TTL on RocksDB, but it needs to be aligned with Kafka topic (store-changelog)
+        // Overall, I didn't notice performance degradation by doing cleanups in the task
         eventStore.delete(entry.getKey)
       }
     }

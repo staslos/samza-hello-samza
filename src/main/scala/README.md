@@ -103,15 +103,15 @@ Use following commands to run PoC on Magnetic's Dev Hadoop cluster.
 bin/grid bootstrap
 
 # Create topics on Magnetic's Dev Kafka
-sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-raw --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-raw --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-meta --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-meta --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-error --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-error --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-bid-joined --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-store-changelog --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1
-sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-store-changelog --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1
+sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-raw --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-raw --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-meta --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-meta --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-error --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-error --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-bid-joined --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 1 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic imp-store-changelog --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
+sh deploy/kafka/bin/kafka-topics.sh --create --topic bid-store-changelog --zookeeper zk001.dev.us-east-1.mgnt.cc:2181 --partitions 30 --replication 1 --config retention.ms=8640000 --config segment.bytes=536870912
 sh deploy/kafka/bin/kafka-topics.sh --list --zookeeper zk001.dev.us-east-1.mgnt.cc:2181
 
 # Build and deploy project to Magnetic's Dev Hadoop cluster
