@@ -116,7 +116,7 @@ sh deploy/kafka/bin/kafka-topics.sh --list --zookeeper zk001.dev.us-east-1.mgnt.
 
 # Build and deploy project to Magnetic's Dev Hadoop cluster
 mvn clean package -Denv=cdh5.4.0
-scp -r ./target/hello-samza-0.10.0-dist.tar.gz hadoop-client01.dev.aws.mgnt.cc:/srv/stanislav/samza/hello-samza
+scp -r ./target/hello-samza-0.10.0-dist.tar.gz hadoop-client01.dev.aws.mgnt.cc:/srv/$USER/samza/hello-samza
 ssh hadoop-client01.dev.aws.mgnt.cc
 mkdir -p /srv/$USER/samza/hello-samza
 cd /srv/$USER/samza/hello-samza
