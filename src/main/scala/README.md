@@ -10,7 +10,7 @@ i.e. all the necessary information to make a join will end up on the same machin
 - Tested on local Samza grid and at Scale on Hadoop cluster
 - Please note, media partner impressions just dropped during the join, since there is no related bids
 
-###TODO
+###Done at scale
 - Deploy to Hadoop cluster and test at scale
 - Performance of the state storage for lookups, size of the data we can hold (KV storage works well on SSD, 
 but can suffer on regular HDD)
